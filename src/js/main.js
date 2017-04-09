@@ -71,5 +71,5 @@ createCalendar("calendar", 1984, 8); //викликаєм функцію createC
 $('.td_num').click (function(){
     $('.td_num').removeClass('selected');
     $(this).addClass('selected');
-    alert($(this).text() + " " + $("#calendar-month-year").text());
+    alert($(this).text() + " " + $("#calendar-month-year").text().substring(0, 6));
 });
