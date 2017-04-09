@@ -4,6 +4,7 @@
   "description": "\"Magnis_Calendar\"",
   "main": "gulpfile.js",
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "jquery": "^3.1.1"
   },
   "devDependencies": {

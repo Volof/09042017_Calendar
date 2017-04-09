@@ -13,11 +13,21 @@ var isDevelopment = true;
 
 gulp.task("js:vendor", function () {
     return gulp.src([
-        "node_modules/jquery/dist/jquery.js"
+        "node_modules/jquery/dist/jquery.js",
+        "node_modules/bootstrap/dist/js/bootstrap.js"
     ])
         .pipe(concat("vendor.js"))
         .pipe(gulpIf(!isDevelopment, uglify()))
         .pipe(gulp.dest("dist/js"));
+});
+
+gulp.task("css:vendor", function () {
+    return gulp.src([
+        "node_modules/bootstrap/dist/css/bootstrap.css"
+    ])
+        .pipe(gulpIf(!isDevelopment, nano()))
+        .pipe(concat("vendor.css"))
+        .pipe(gulp.dest("dist/css"));
 });
 
 gulp.task("js:own", function () {
@@ -43,7 +53,7 @@ gulp.task("html", function () {
     return gulp.src("src/*.html")
         .pipe(gulp.dest("dist"));
 });
-gulp.task("css", ["css:own"]);
+gulp.task("css", ["css:own", "css:vendor"]);
 gulp.task("js", ["js:own", "js:vendor"]);
 
 gulp.task("watch", ["build"], function () {
