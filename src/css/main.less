@@ -26,6 +26,7 @@ body{
   font-family: Tahoma, sans-serif;
   text-transform: uppercase;
   color: #ffffff;
+  cursor: default;
   background-image: linear-gradient(#000, #2c2c2c);
 }
 
@@ -60,8 +61,12 @@ body{
   display: table-cell;
   vertical-align: inherit;
 }
+#calendar-dates > table > tr > td.td_num:hover {
+  color: #ffffff;
+  background: #6a9113 ;
+}
 #calendar-dates > table > tr > td:hover{
-  color: #6a9113;
+  //color: #6a9113;
 }
 #calendar-dates > table > tr > td.selected {
   color: #6a9113;
